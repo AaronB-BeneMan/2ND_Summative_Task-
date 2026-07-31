@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CoffeeBiz</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -19,13 +21,23 @@ body{
     text-align:center;
 }
 
+
+
 .header{
     padding:30px;
 }
 
 .header img{
+    float:left;
+    margin:0 20px 20px;
     border-radius:50%;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.header::after{
+    content:"";
+    display:block;
+    clear:both;
 }
 
 .header h1{
@@ -35,297 +47,700 @@ body{
 }
 
 .nav{
-    margin:20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:15px;
+    position:sticky;
+    top:0;
+    background:#f5f0ea;
+    z-index:1000;
 }
 
-.nav button{
+.nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:15px;
+    position:sticky;
+    top:0;
+    background:#f5f0ea;
+    z-index:1000;
+}
+
+.nav button,
+.nav a{
+
     padding:12px 25px;
-    margin:5px;border:none
-    ;border-radius:30px;background:#6f4e37;
-    color:#fff;font-size:16px;
-    cursor:pointer;transition:.3s;
+    border:none;
+    border-radius:30px;
+    background:#6f4e37;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+
 }
 
-.nav button:hover{
+
+.nav button:hover,
+.nav a:hover{
+
     background:#8b5a2b;
     transform:scale(1.05);
+
 }
 
+
+
 .card{
+
     display:none;
     padding:30px;
     animation:fade .4s;
+
 }
 
+
+
+
+
+
 .hero{
+
     background:#6f4e37;
-    color:#fff;
+    color:white;
     padding:50px 20px;
     border-radius:20px;
     max-width:900px;
     margin:auto;
+
 }
+
 
 .hero h2{
+
     font-size:36px;
     margin-bottom:15px;
+
 }
+
 
 .hero p{
+
     font-size:18px;
     line-height:1.6;
+
 }
 
+
+
+
 .products{
+
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:20px;
     margin-top:25px;
+
 }
 
+
 .item{
-    background:#fff;
+
+    background:white;
     padding:20px;
     border-radius:15px;
     width:220px;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
     transition:.3s;
+
 }
+
 
 .item:hover{
+
     transform:translateY(-8px);
+
 }
+
 
 .item img{
+
+    width:150px;
+    height:150px;
+    object-fit:cover;
     border-radius:10px;
     margin:10px 0;
+
 }
 
-.gallery img{
-    margin:10px;
-    border-radius:10px;
-    box-shadow:0 5px 10px rgba(0,0,0,.2);
-}
+
+
+
 
 .section{
+
     max-width:900px;
     margin:40px auto;
+
 }
 
+
 .review{
-    background:#fff;
+
+    background:white;
     padding:15px;
     margin:15px;
     border-radius:10px;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
+
 }
+
+
+
+
+.gallery img{
+
+    width:180px;
+    height:150px;
+    object-fit:cover;
+    margin:10px;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+
+}
+
+
+
+
 
 footer{
+
     background:#6f4e37;
-    color:#fff;
+    color:white;
     padding:20px;
     margin-top:30px;
+
 }
 
+
+
+
+@media(max-width:480px){
+
+
+.header img{
+
+    width:130px;
+    height:130px;
+    float:none;
+    margin:0 auto 15px;
+
+}
+
+
+.header h1{
+
+    font-size:24px;
+
+}
+
+
+.nav{
+
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+.nav button,
+.nav a{
+
+    width:90%;
+
+}
+
+
+.hero{
+
+    padding:30px 15px;
+
+}
+
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+
+.hero p{
+
+    font-size:15px;
+
+}
+
+
+.products{
+
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+.item{
+
+    width:90%;
+
+}
+
+
+.gallery img{
+
+    width:110px;
+    height:110px;
+
+}
+
+
+footer{
+
+    font-size:14px;
+
+}
+
+
+}
+
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="header">
-<img src="LogoShop.jpg" width="180" height="180">
+
+<img src="LogoShop.jpg" width="180" height="180" alt="CoffeeBiz Logo">
+
 <h1>CoffeeBiz</h1>
+
 <p>Freshly Brewed Happiness Every Day ☕</p>
+
 </div>
 
+
+
 <div class="nav">
+
 <button onclick="showHome()">Home</button>
+
 <button onclick="showMenu()">Menu</button>
+
 <button onclick="showGallery()">Gallery</button>
+
 <button onclick="showAbout()">About</button>
+
+<a href="order1.html">Order</a>
+
 </div>
+
+
+
+
+
+
 
 <div class="card" id="Home">
 
+
 <div class="hero">
+
 <h2>Welcome to CoffeeBiz</h2>
-<p>Enjoy premium coffee, delicious drinks, and a cozy atmosphere. Whether you're studying, working, or spending time with friends, CoffeeBiz is the perfect place to relax.</p>
+
+<p>
+Enjoy premium coffee, delicious drinks, and a cozy atmosphere.
+Whether you're studying, working, or spending time with friends,
+CoffeeBiz is the perfect place to relax.
+</p>
+
 </div>
 
+
+
 <div class="section">
+
 <h2>Best Sellers</h2>
+
 
 <div class="products">
 
+
 <div class="item">
-<img src="matcha.jpg" width="150" height="175">
+
+<img src="matcha.jpg" alt="Matcha Milk">
+
 <h3>Matcha Milk</h3>
+
 <p>Sweet and creamy premium matcha.</p>
+
 <b>₱50</b>
+
 </div>
 
+
+
 <div class="item">
-<img src="blackkopi.jpg" width="150" height="175">
+
+<img src="blackkopi.jpg" alt="Black Coffee">
+
 <h3>Black Coffee</h3>
+
 <p>Freshly brewed strong coffee.</p>
+
 <b>₱30</b>
+
 </div>
+
+
 
 <div class="item">
-<img src="hotchoco.jpg" width="150" height="175">
+
+<img src="hotchoco.jpg" alt="Hot Chocolate">
+
 <h3>Hot Chocolate</h3>
+
 <p>Rich and creamy chocolate drink.</p>
+
 <b>₱35</b>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
+
+
 
 <div class="section">
+
 <h2>Why Choose CoffeeBiz?</h2>
+
 <p>✔ Freshly Brewed Coffee</p>
+
 <p>✔ Affordable Prices</p>
+
 <p>✔ Friendly Staff</p>
+
 <p>✔ Cozy Environment</p>
+
 <p>✔ High Quality Ingredients</p>
+
 </div>
 
+
+
+
+
 <div class="section">
+
 <h2>Customer Reviews</h2>
 
+
 <div class="review">
+
 ⭐⭐⭐⭐⭐<br>
 "The coffee tastes amazing and the place is relaxing."
+
 </div>
 
+
 <div class="review">
+
 ⭐⭐⭐⭐⭐<br>
 "Affordable drinks with excellent service!"
+
 </div>
+
 
 <div class="review">
+
 ⭐⭐⭐⭐⭐<br>
 "My favorite place to study while enjoying coffee."
-</div>
 
 </div>
 
+
 </div>
+
+
+</div>
+
+
+
+
+
+
+
 
 <div class="card" id="Menu">
 
+
 <h2>Our Menu</h2>
+
 
 <div class="products">
 
+
 <div class="item">
-<img src="blackkopi.jpg" width="150" height="150">
+
+<img src="blackkopi.jpg" alt="Black Coffee">
+
 <h3>Black Coffee</h3>
+
 <b>₱30</b>
+
 </div>
 
+
 <div class="item">
-<img src="hotchoco.jpg" width="150" height="150">
+
+<img src="hotchoco.jpg" alt="Hot Chocolate">
+
 <h3>Hot Chocolate</h3>
+
 <b>₱35</b>
+
 </div>
 
+
 <div class="item">
-<img src="matcha.jpg" width="150" height="150">
+
+<img src="matcha.jpg" alt="Matcha Milk">
+
 <h3>Matcha Milk</h3>
+
 <b>₱50</b>
+
 </div>
 
+
 <div class="item">
-<img src="latte.jpg" width="150" height="150">
+
+<img src="latte.jpg" alt="Cafe Latte">
+
 <h3>Cafe Latte</h3>
+
 <b>₱65</b>
+
 </div>
 
+
 <div class="item">
-<img src="espresso.jpg" width="150" height="155">
+
+<img src="espresso.jpg" alt="Espresso">
+
 <h3>Espresso</h3>
+
 <b>₱55</b>
+
 </div>
+
 
 <div class="item">
-<img src="icedcoffee.jpg" width="150" height="150">
+
+<img src="icedcoffee.jpg" alt="Iced Coffee">
+
 <h3>Iced Coffee</h3>
+
 <b>₱60</b>
-</div>
 
 </div>
 
+
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+
 
 <div class="card gallery" id="Gallery">
 
-<h2>Gallery</h2><br>
 
-<img src="matcha.jpg" width="180" height="150">
-<img src="blackkopi.jpg" width="180" height="150">
-<img src="hotchoco.jpg" width="180" height="150">
-<img src="latte.jpg" width="180" height="150">
-<img src="espresso.jpg" width="180" height="150">
-<img src="icedcoffee.jpg" width="180" height="150">
+<h2>Gallery</h2>
+
+
+<img src="matcha.jpg" alt="Matcha">
+
+<img src="blackkopi.jpg" alt="Coffee">
+
+<img src="hotchoco.jpg" alt="Hot Chocolate">
+
+<img src="latte.jpg" alt="Latte">
+
+<img src="espresso.jpg" alt="Espresso">
+
+<img src="icedcoffee.jpg" alt="Iced Coffee">
+
 
 </div>
+
+
+
+
+
+
+
 
 <div class="card" id="About">
 
-<h2>About CoffeeBiz</h2><br>
 
-<p>CoffeeBiz is dedicated to serving freshly brewed coffee and delicious beverages made from quality ingredients. Our goal is to create a warm and welcoming place where everyone can enjoy every cup.</p>
+<h2>About CoffeeBiz</h2>
+
+
+<p>
+CoffeeBiz is dedicated to serving freshly brewed coffee and delicious
+beverages made from quality ingredients. Our goal is to create a warm
+and welcoming place where everyone can enjoy every cup.
+</p>
+
 
 <br>
+
 
 <h3>Mission</h3>
-<p>To serve quality drinks with outstanding customer service at affordable prices.</p>
+
+<p>
+To serve quality drinks with outstanding customer service at affordable prices.
+</p>
+
 
 <br>
+
 
 <h3>Vision</h3>
-<p>To become one of the most loved local coffee shops in Nueva Ecija.</p>
+
+<p>
+To become one of the most loved local coffee shops in Nueva Ecija.
+</p>
+
 
 <br>
 
+
 <p><b>Business Hours:</b> 8:00 AM - 8:00 PM</p>
+
 <p><b>Contact:</b> 0967-430-5142</p>
+
 <p><b>Email:</b> coffeebiz@email.com</p>
+
 <p><b>Address:</b> Purok 6, Sta. Cruz, Gapan City, Nueva Ecija</p>
+
 
 </div>
 
+
+
+
+
+
 <footer>
+
 <h3>CoffeeBiz</h3>
+
 <p>Freshly Brewed Happiness in Every Cup ☕</p>
+
 <p>Follow us on Facebook | Instagram | TikTok</p>
+
 <p>© 2026 CoffeeBiz. All Rights Reserved.</p>
+
 </footer>
 
+
+
+
+
+
 <script>
+
+
 function hideCards(){
-document.querySelectorAll(".card").forEach(c=>c.style.display="none");
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.style.display="none";
+
+});
+
 }
+
+
 
 function showHome(){
-hideCards();document.getElementById("Home").style.display="block";
+
+hideCards();
+
+document.getElementById("Home").style.display="block";
+
 }
+
+
 
 function showMenu(){
-hideCards();document.getElementById("Menu").style.display="block";
+
+hideCards();
+
+document.getElementById("Menu").style.display="block";
+
 }
+
+
 
 function showGallery(){
-hideCards();document.getElementById("Gallery").style.display="block";
+
+hideCards();
+
+document.getElementById("Gallery").style.display="block";
+
 }
+
+
 
 function showAbout(){
-hideCards();document.getElementById("About").style.display="block";
+
+hideCards();
+
+document.getElementById("About").style.display="block";
+
 }
 
+
+
 window.onload=showHome;
+
+
 </script>
 
+
 </body>
+
+</html>
